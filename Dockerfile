@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-COPY . /code/app
+COPY . /app
 
-CMD ["fastapi", "run", "code/main.py", "--port", "80", "--host", "0.0.0.0"]
+CMD ["fastapi", "run", "./main.py", "--port", "80", "--host", "0.0.0.0"]
